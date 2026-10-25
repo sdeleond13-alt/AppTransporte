@@ -1,0 +1,23 @@
+
+package umg.DAO;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+
+public class ConexionBD {
+  private static final String URL =
+"jdbc:mysql://localhost:3306/db_paqueteria"
++ "?useSSL=false"
++ "&allowPublicKeyRetrieval=true" //clave publica
++ "&serverTimezone=America/Guatemala"; //zona horaria de donde estamos, por temas de hrs y fechas.
+  
+private static final String USER = "root"; 
+private static final String PASS = "root";
+
+public static Connection abrir()throws SQLException { //metodo estatico que se esta generando.
+return DriverManager.getConnection(URL, USER, PASS);
+}  
+}
+
+
